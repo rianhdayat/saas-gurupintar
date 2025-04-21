@@ -70,21 +70,21 @@ const recentPayments = [
 const recentActivities = [
   {
     id: 1,
-    action: "Password Reset",
+    action: "Atur Ulang Kata Sandi",
     user: "David Brown",
     date: "2023-07-03",
     time: "10:15 AM",
   },
   {
     id: 2,
-    action: "Account Updated",
+    action: "Pembaruan Akun",
     user: "Alice Johnson",
     date: "2023-07-02",
     time: "2:30 PM",
   },
   {
     id: 3,
-    action: "Permissions Changed",
+    action: "Perubahan Izin",
     user: "Eva Garcia",
     date: "2023-07-01",
     time: "11:45 AM",
@@ -94,24 +94,24 @@ const recentActivities = [
 export default function OperatorDashboard() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Operator Dashboard</h1>
+      <h1 className="text-3xl font-bold mb-8">Dasbor Operator</h1>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">Total Teachers</CardTitle>
+            <CardTitle className="text-sm font-medium">Total Guru</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.totalTeachers}</div>
-            <p className="text-xs text-muted-foreground">{stats.activeTeachers} active teachers</p>
+            <p className="text-xs text-muted-foreground">{stats.activeTeachers} Guru Aktif</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">Total Payments (YTD)</CardTitle>
+            <CardTitle className="text-sm font-medium">Total Pembayaran (YTD)</CardTitle>
             <CreditCard className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -122,26 +122,26 @@ export default function OperatorDashboard() {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">Documents Generated</CardTitle>
+            <CardTitle className="text-sm font-medium">Dokumen Yang Dihasilkan</CardTitle>
             <FileText className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.documentsGenerated}</div>
             <div className="mt-2">
               <Progress value={stats.quotaUsedPercentage} className="h-2" />
-              <p className="text-xs text-muted-foreground mt-1">{stats.remainingQuota} documents remaining</p>
+              <p className="text-xs text-muted-foreground mt-1">{stats.remainingQuota} Dokumen yang tersisa</p>
             </div>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">Next Payment Date</CardTitle>
+            <CardTitle className="text-sm font-medium">Tanggal Pembayaran Berikutnya</CardTitle>
             <AlertCircle className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.nextPaymentDate}</div>
-            <p className="text-xs text-muted-foreground">5 teachers scheduled</p>
+            <p className="text-xs text-muted-foreground">5 Guru dijadwalkan</p>
           </CardContent>
         </Card>
       </div>
@@ -150,8 +150,8 @@ export default function OperatorDashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         <Card>
           <CardHeader>
-            <CardTitle>Payment History</CardTitle>
-            <CardDescription>Monthly payment totals for the current year</CardDescription>
+            <CardTitle>Riwayat Pembayaran</CardTitle>
+            <CardDescription>Total pembayaran bulanan untuk tahun ini</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-[300px]">
@@ -170,8 +170,8 @@ export default function OperatorDashboard() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Document Generation</CardTitle>
-            <CardDescription>Monthly RPP and syllabus generation</CardDescription>
+            <CardTitle>Pembuatan Dokumen</CardTitle>
+            <CardDescription>Pembuatan RPP dan Silabus bulanan</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-[300px]">
@@ -195,8 +195,8 @@ export default function OperatorDashboard() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between">
             <div>
-              <CardTitle>Recent Payments</CardTitle>
-              <CardDescription>Latest teacher payments</CardDescription>
+              <CardTitle>Pembayaran Terbaru</CardTitle>
+              <CardDescription>Pembayaran Guru Terbaru</CardDescription>
             </div>
             <Button variant="outline" size="sm" asChild>
               <Link href="/dashboard/operator/payments">
@@ -209,11 +209,11 @@ export default function OperatorDashboard() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Teacher</TableHead>
-                  <TableHead>Amount</TableHead>
-                  <TableHead>Date</TableHead>
+                  <TableHead>Guru</TableHead>
+                  <TableHead>Jumlah Pembayaran</TableHead>
+                  <TableHead>Tanggal Pembayaran</TableHead>
                   <TableHead>Status</TableHead>
-                  <TableHead>Actions</TableHead>
+                  <TableHead>Aksi</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -239,7 +239,7 @@ export default function OperatorDashboard() {
               <Button asChild>
                 <Link href="/dashboard/operator/payments">
                   <Plus className="mr-2 h-4 w-4" />
-                  Process New Payment
+                  Proses Pembayaran Baru
                 </Link>
               </Button>
             </div>
@@ -249,12 +249,12 @@ export default function OperatorDashboard() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between">
             <div>
-              <CardTitle>Account Activities</CardTitle>
-              <CardDescription>Recent account management activities</CardDescription>
+              <CardTitle>Aktivitas Akun</CardTitle>
+              <CardDescription>Aktivitas manajemen akun terbaru</CardDescription>
             </div>
             <Button variant="outline" size="sm" asChild>
               <Link href="/dashboard/operator/accounts">
-                View All
+                Lihat Semua
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -274,7 +274,7 @@ export default function OperatorDashboard() {
               ))}
               <div className="mt-4 flex justify-center">
                 <Button variant="outline" asChild>
-                  <Link href="/dashboard/operator/accounts">Manage Teacher Accounts</Link>
+                  <Link href="/dashboard/operator/accounts">Kelola Akun Guru</Link>
                 </Button>
               </div>
             </div>

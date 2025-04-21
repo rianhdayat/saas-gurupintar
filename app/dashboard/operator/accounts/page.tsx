@@ -160,13 +160,13 @@ export default function AccountsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Teacher Account Management</h1>
+      <h1 className="text-3xl font-bold mb-8">Manajemen Akun Guru</h1>
 
       <Tabs defaultValue="accounts" className="space-y-6">
         <TabsList className="grid w-full grid-cols-3 max-w-md">
-          <TabsTrigger value="accounts">Accounts</TabsTrigger>
-          <TabsTrigger value="invitations">Invitations</TabsTrigger>
-          <TabsTrigger value="activity">Activity Log</TabsTrigger>
+          <TabsTrigger value="accounts">Akun</TabsTrigger>
+          <TabsTrigger value="invitations">Undangan</TabsTrigger>
+          <TabsTrigger value="activity">Log Aktivitas</TabsTrigger>
         </TabsList>
 
         {/* Accounts Tab */}
@@ -175,12 +175,12 @@ export default function AccountsPage() {
             <CardHeader>
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                  <CardTitle>Teacher Accounts</CardTitle>
-                  <CardDescription>Manage teacher accounts and permissions</CardDescription>
+                  <CardTitle>Akun Guru</CardTitle>
+                  <CardDescription>Mengelola akun guru dan izin</CardDescription>
                 </div>
                 <Button>
                   <UserPlus className="h-4 w-4 mr-2" />
-                  Add New Teacher
+                  Tambah Guru Baru
                 </Button>
               </div>
             </CardHeader>
@@ -204,9 +204,9 @@ export default function AccountsPage() {
                       <SelectValue placeholder="Filter by status" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">All Statuses</SelectItem>
-                      <SelectItem value="active">Active</SelectItem>
-                      <SelectItem value="inactive">Inactive</SelectItem>
+                      <SelectItem value="all">Semua Status</SelectItem>
+                      <SelectItem value="active">Aktif</SelectItem>
+                      <SelectItem value="inactive">Tidak Aktif</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -215,12 +215,12 @@ export default function AccountsPage() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Name</TableHead>
+                    <TableHead>Nama</TableHead>
                     <TableHead>Email</TableHead>
                     <TableHead>Role</TableHead>
                     <TableHead>Status</TableHead>
-                    <TableHead>Last Login</TableHead>
-                    <TableHead>Actions</TableHead>
+                    <TableHead>Terakhir Login</TableHead>
+                    <TableHead>Aksi</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -394,15 +394,15 @@ export default function AccountsPage() {
         <TabsContent value="invitations">
           <Card>
             <CardHeader>
-              <CardTitle>Pending Invitations</CardTitle>
-              <CardDescription>Manage teacher account invitations</CardDescription>
+              <CardTitle>Undangan Tertunda</CardTitle>
+              <CardDescription>Mengelola undangan akun guru</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="flex justify-between items-center mb-6">
-                <p className="text-muted-foreground">2 pending invitations</p>
+                <p className="text-muted-foreground">2 undangan tertunda</p>
                 <Button>
                   <Mail className="h-4 w-4 mr-2" />
-                  Send New Invitation
+                  Kirim Undangan Baru
                 </Button>
               </div>
 
@@ -411,9 +411,9 @@ export default function AccountsPage() {
                   <TableRow>
                     <TableHead>Email</TableHead>
                     <TableHead>Role</TableHead>
-                    <TableHead>Invited On</TableHead>
+                    <TableHead>Dibuat Pada</TableHead>
                     <TableHead>Status</TableHead>
-                    <TableHead>Actions</TableHead>
+                    <TableHead>Aksi</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -423,18 +423,18 @@ export default function AccountsPage() {
                     <TableCell>July 1, 2023</TableCell>
                     <TableCell>
                       <Badge variant="secondary" className="bg-amber-100 text-amber-800 hover:bg-amber-100">
-                        Pending
+                        Tertunda
                       </Badge>
                     </TableCell>
                     <TableCell>
                       <div className="flex space-x-2">
                         <Button variant="outline" size="sm">
                           <Mail className="h-4 w-4 mr-2" />
-                          Resend
+                          Kirim Ulang
                         </Button>
                         <Button variant="outline" size="sm" className="text-destructive hover:text-destructive">
                           <AlertTriangle className="h-4 w-4 mr-2" />
-                          Cancel
+                          Hapus
                         </Button>
                       </div>
                     </TableCell>
@@ -445,18 +445,18 @@ export default function AccountsPage() {
                     <TableCell>July 2, 2023</TableCell>
                     <TableCell>
                       <Badge variant="secondary" className="bg-amber-100 text-amber-800 hover:bg-amber-100">
-                        Pending
+                        Tertunda
                       </Badge>
                     </TableCell>
                     <TableCell>
                       <div className="flex space-x-2">
                         <Button variant="outline" size="sm">
                           <Mail className="h-4 w-4 mr-2" />
-                          Resend
+                          Kirim Ulang
                         </Button>
                         <Button variant="outline" size="sm" className="text-destructive hover:text-destructive">
                           <AlertTriangle className="h-4 w-4 mr-2" />
-                          Cancel
+                          Hapus
                         </Button>
                       </div>
                     </TableCell>
@@ -471,63 +471,63 @@ export default function AccountsPage() {
         <TabsContent value="activity">
           <Card>
             <CardHeader>
-              <CardTitle>Account Activity Log</CardTitle>
-              <CardDescription>Recent account activities and changes</CardDescription>
+              <CardTitle>Log Aktivitas Akun</CardTitle>
+              <CardDescription>Aktivitas dan perubahan akun terbaru</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
                 <div className="border-l-4 border-green-500 pl-4 py-1">
                   <div className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-green-500 mr-2" />
-                    <h3 className="font-medium">Password Reset</h3>
+                    <h3 className="font-medium">Atur Ulang Password</h3>
                     <span className="ml-auto text-sm text-muted-foreground">July 3, 2023 - 10:15 AM</span>
                   </div>
                   <p className="text-sm text-muted-foreground mt-1">
-                    Password reset link sent to <span className="font-medium">david@example.com</span>
+                    Undangan password dikirim ke <span className="font-medium">david@example.com</span>
                   </p>
                 </div>
 
                 <div className="border-l-4 border-blue-500 pl-4 py-1">
                   <div className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-blue-500 mr-2" />
-                    <h3 className="font-medium">Account Updated</h3>
+                    <h3 className="font-medium">Akun Diperbarui</h3>
                     <span className="ml-auto text-sm text-muted-foreground">July 2, 2023 - 2:30 PM</span>
                   </div>
                   <p className="text-sm text-muted-foreground mt-1">
-                    Updated account details for <span className="font-medium">Alice Johnson</span>
+                    Detail akun diperbarui untuk <span className="font-medium">Alice Johnson</span>
                   </p>
                 </div>
 
                 <div className="border-l-4 border-purple-500 pl-4 py-1">
                   <div className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-purple-500 mr-2" />
-                    <h3 className="font-medium">Permissions Changed</h3>
+                    <h3 className="font-medium">Izin Diperbarui</h3>
                     <span className="ml-auto text-sm text-muted-foreground">July 1, 2023 - 11:45 AM</span>
                   </div>
                   <p className="text-sm text-muted-foreground mt-1">
-                    Updated permissions for <span className="font-medium">Eva Garcia</span>
+                    Izin diperbarui untuk <span className="font-medium">Eva Garcia</span>
                   </p>
                 </div>
 
                 <div className="border-l-4 border-amber-500 pl-4 py-1">
                   <div className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-amber-500 mr-2" />
-                    <h3 className="font-medium">Invitation Sent</h3>
+                    <h3 className="font-medium">Undangan Dikirim</h3>
                     <span className="ml-auto text-sm text-muted-foreground">July 1, 2023 - 9:20 AM</span>
                   </div>
                   <p className="text-sm text-muted-foreground mt-1">
-                    Sent invitation to <span className="font-medium">frank@example.com</span>
+                    Undangan dikirim ke <span className="font-medium">frank@example.com</span>
                   </p>
                 </div>
 
                 <div className="border-l-4 border-red-500 pl-4 py-1">
                   <div className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-red-500 mr-2" />
-                    <h3 className="font-medium">Account Status Changed</h3>
+                    <h3 className="font-medium">Status Akun Diperbarui</h3>
                     <span className="ml-auto text-sm text-muted-foreground">June 30, 2023 - 3:10 PM</span>
                   </div>
                   <p className="text-sm text-muted-foreground mt-1">
-                    Changed status to <span className="font-medium">Inactive</span> for{" "}
+                    Status diperbarui ke <span className="font-medium">Tidak Aktif</span> untuk{" "}
                     <span className="font-medium">David Brown</span>
                   </p>
                 </div>
@@ -535,7 +535,7 @@ export default function AccountsPage() {
             </CardContent>
             <CardFooter>
               <Button variant="outline" className="w-full">
-                Load More Activity
+                Tampilkan Lebih Banyak Aktivitas
               </Button>
             </CardFooter>
           </Card>

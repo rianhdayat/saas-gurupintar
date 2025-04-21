@@ -108,21 +108,21 @@ export default function TeachersPage() {
     <div className="container mx-auto py-6 space-y-8">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Teachers Management</h1>
-          <p className="text-muted-foreground">Manage teacher accounts, quotas, and document generation.</p>
+          <h1 className="text-3xl font-bold tracking-tight">Manajemen Guru</h1>
+          <p className="text-muted-foreground">Mengelola akun guru, kuota, dan pembuatan dokumen.</p>
         </div>
         <Dialog open={isAddTeacherDialogOpen} onOpenChange={setIsAddTeacherDialogOpen}>
           <DialogTrigger asChild>
             <Button>
               <Plus className="mr-2 h-4 w-4" />
-              Add Teacher
+              Tambah Guru
             </Button>
           </DialogTrigger>
           <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
-              <DialogTitle>Add New Teacher</DialogTitle>
+              <DialogTitle>Tambah Guru Baru</DialogTitle>
               <DialogDescription>
-                Fill in the details to create a new teacher account.
+                Isi detail untuk membuat akun guru baru.
                 {remainingQuota <= 3 && remainingQuota > 0 && (
                   <div className="mt-2 text-amber-500 font-medium">
                     Warning: You only have {remainingQuota} teacher account{remainingQuota !== 1 ? "s" : ""} remaining.

@@ -100,8 +100,8 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
           <TabsContent value="personal">
             <Card>
               <CardHeader>
-                <CardTitle>Personal Information</CardTitle>
-                <CardDescription>Enter the teacher's personal details.</CardDescription>
+                <CardTitle>Informasi Pribadi</CardTitle>
+                <CardDescription>Masukkan detail pribadi guru.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex flex-col items-center mb-6">
@@ -110,7 +110,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     <AvatarFallback>TP</AvatarFallback>
                   </Avatar>
                   <Button variant="outline" className="mt-2" type="button">
-                    Upload Photo
+                    Unggah Foto
                   </Button>
                 </div>
 
@@ -120,7 +120,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="fullName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Full Name</FormLabel>
+                        <FormLabel>Nama Lengkap</FormLabel>
                         <FormControl>
                           <Input placeholder="John Doe" {...field} />
                         </FormControl>
@@ -148,7 +148,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Phone Number</FormLabel>
+                        <FormLabel>Nomor Telepon</FormLabel>
                         <FormControl>
                           <Input placeholder="+62 812 3456 7890" {...field} />
                         </FormControl>
@@ -162,7 +162,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="dateOfBirth"
                     render={({ field }) => (
                       <FormItem className="flex flex-col">
-                        <FormLabel>Date of Birth</FormLabel>
+                        <FormLabel>Tanggal Lahir</FormLabel>
                         <Popover>
                           <PopoverTrigger asChild>
                             <FormControl>
@@ -171,7 +171,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                                 className={`w-full pl-3 text-left font-normal ${!field.value && "text-muted-foreground"}`}
                                 type="button"
                               >
-                                {field.value ? format(field.value, "PPP") : <span>Pick a date</span>}
+                                {field.value ? format(field.value, "PPP") : <span>Pilih tanggal</span>}
                                 <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                               </Button>
                             </FormControl>
@@ -196,7 +196,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="gender"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Gender</FormLabel>
+                        <FormLabel>Jenis Kelamin</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger>
@@ -204,9 +204,8 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="male">Male</SelectItem>
-                            <SelectItem value="female">Female</SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
+                            <SelectItem value="male">Laki-laki</SelectItem>
+                            <SelectItem value="female">Perempuan</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -219,9 +218,9 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="address"
                     render={({ field }) => (
                       <FormItem className="md:col-span-2">
-                        <FormLabel>Address</FormLabel>
+                        <FormLabel>Alamat</FormLabel>
                         <FormControl>
-                          <Textarea placeholder="Enter full address" className="resize-none" {...field} />
+                          <Textarea placeholder="Masukkan alamat lengkap" className="resize-none" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -233,7 +232,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
 
             <div className="flex justify-end mt-4">
               <Button type="button" onClick={() => setActiveTab("professional")}>
-                Next: Professional Information
+                Selanjutnya: Informasi Profesional
               </Button>
             </div>
           </TabsContent>
@@ -242,8 +241,8 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
           <TabsContent value="professional">
             <Card>
               <CardHeader>
-                <CardTitle>Professional Information</CardTitle>
-                <CardDescription>Enter the teacher's professional details.</CardDescription>
+                <CardTitle>Informasi Profesional</CardTitle>
+                <CardDescription>Masukkan detail profesional guru.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -256,7 +255,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                         <FormControl>
                           <Input placeholder="198501252010121001" {...field} />
                         </FormControl>
-                        <FormDescription>National Instructor Number (if applicable)</FormDescription>
+                        <FormDescription>Nomor Instruktur Nasional (jika berlaku)</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -267,7 +266,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="employeeId"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Employee ID</FormLabel>
+                        <FormLabel>ID Karyawan</FormLabel>
                         <FormControl>
                           <Input placeholder="EMP-12345" {...field} />
                         </FormControl>
@@ -281,9 +280,9 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="position"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Position</FormLabel>
+                        <FormLabel>Jabatan</FormLabel>
                         <FormControl>
-                          <Input placeholder="Mathematics Teacher" {...field} />
+                          <Input placeholder="Guru Matematika" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -295,11 +294,11 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="subjects"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Subjects Taught</FormLabel>
+                        <FormLabel>Mata Pelajaran</FormLabel>
                         <FormControl>
-                          <Input placeholder="Mathematics, Physics" {...field} />
+                          <Input placeholder="Matematika, Fisika" {...field} />
                         </FormControl>
-                        <FormDescription>Separate multiple subjects with commas</FormDescription>
+                        <FormDescription>Pisahkan mata pelajaran dengan koma</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -310,10 +309,10 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="education"
                     render={({ field }) => (
                       <FormItem className="md:col-span-2">
-                        <FormLabel>Education</FormLabel>
+                        <FormLabel>Pendidikan</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="Bachelor of Education, University of Indonesia, 2010"
+                            placeholder="Sarjana Pendidikan, Universitas Indonesia, 2010"
                             className="resize-none"
                             {...field}
                           />
@@ -328,10 +327,10 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="experience"
                     render={({ field }) => (
                       <FormItem className="md:col-span-2">
-                        <FormLabel>Experience (Optional)</FormLabel>
+                        <FormLabel>Pengalaman (Opsional)</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="10 years teaching experience at SMA Negeri 1 Jakarta"
+                            placeholder="10 tahun pengalaman mengajar di SMA Negeri 1 Jakarta"
                             className="resize-none"
                             {...field}
                           />
@@ -346,10 +345,10 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
 
             <div className="flex justify-between mt-4">
               <Button type="button" variant="outline" onClick={() => setActiveTab("personal")}>
-                Previous: Personal Information
+                Sebelumnya: Informasi Pribadi
               </Button>
               <Button type="button" onClick={() => setActiveTab("school")}>
-                Next: School Information
+                Selanjutnya: Informasi Sekolah
               </Button>
             </div>
           </TabsContent>
@@ -358,8 +357,8 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
           <TabsContent value="school">
             <Card>
               <CardHeader>
-                <CardTitle>School Information</CardTitle>
-                <CardDescription>Enter details about the teacher's school.</CardDescription>
+                <CardTitle>Informasi Sekolah</CardTitle>
+                <CardDescription>Masukkan detail sekolah guru.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -368,7 +367,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="schoolName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>School Name</FormLabel>
+                        <FormLabel>Nama Sekolah</FormLabel>
                         <FormControl>
                           <Input placeholder="SMA Negeri 1 Jakarta" {...field} />
                         </FormControl>
@@ -382,7 +381,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="schoolType"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>School Type</FormLabel>
+                        <FormLabel>Jenis Sekolah</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger>
@@ -390,11 +389,11 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="SD">Elementary School (SD)</SelectItem>
-                            <SelectItem value="SMP">Junior High School (SMP)</SelectItem>
-                            <SelectItem value="SMA">Senior High School (SMA)</SelectItem>
-                            <SelectItem value="SMK">Vocational High School (SMK)</SelectItem>
-                            <SelectItem value="Other">Other</SelectItem>
+                            <SelectItem value="SD">Sekolah Dasar (SD)</SelectItem>
+                            <SelectItem value="SMP">Sekolah Menengah Pertama (SMP)</SelectItem>
+                            <SelectItem value="SMA">Sekolah Menengah Atas (SMA)</SelectItem>
+                            <SelectItem value="SMK">Sekolah Menengah Kejuruan (SMK)</SelectItem>
+                            <SelectItem value="Other">Lainnya</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -407,9 +406,9 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="schoolAddress"
                     render={({ field }) => (
                       <FormItem className="md:col-span-2">
-                        <FormLabel>School Address</FormLabel>
+                        <FormLabel>Alamat Sekolah</FormLabel>
                         <FormControl>
-                          <Textarea placeholder="Enter school address" className="resize-none" {...field} />
+                          <Textarea placeholder="Masukkan alamat sekolah" className="resize-none" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -421,10 +420,10 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
 
             <div className="flex justify-between mt-4">
               <Button type="button" variant="outline" onClick={() => setActiveTab("professional")}>
-                Previous: Professional Information
+                Sebelumnya: Informasi Profesional
               </Button>
               <Button type="button" onClick={() => setActiveTab("account")}>
-                Next: Account Settings
+                Selanjutnya: Pengaturan Akun
               </Button>
             </div>
           </TabsContent>
@@ -433,8 +432,8 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
           <TabsContent value="account">
             <Card>
               <CardHeader>
-                <CardTitle>Account Settings</CardTitle>
-                <CardDescription>Set up the teacher's account details.</CardDescription>
+                <CardTitle>Pengaturan Akun</CardTitle>
+                <CardDescription>Atur detail akun guru.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -443,11 +442,11 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="username"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Username</FormLabel>
+                        <FormLabel>Nama Pengguna</FormLabel>
                         <FormControl>
                           <Input placeholder="johndoe" {...field} />
                         </FormControl>
-                        <FormDescription>This will be used for login</FormDescription>
+                        <FormDescription>Ini akan digunakan untuk login</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -458,11 +457,11 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="password"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Password</FormLabel>
+                        <FormLabel>Kata Sandi</FormLabel>
                         <FormControl>
                           <Input type="password" placeholder="••••••••" {...field} />
                         </FormControl>
-                        <FormDescription>Minimum 8 characters</FormDescription>
+                        <FormDescription>Minimal 8 karakter</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -473,7 +472,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="initialQuota"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Initial Document Quota</FormLabel>
+                        <FormLabel>Kuota Dokumen Awal</FormLabel>
                         <FormControl>
                           <Input
                             type="number"
@@ -482,7 +481,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                             onChange={(e) => field.onChange(Number.parseInt(e.target.value) || 0)}
                           />
                         </FormControl>
-                        <FormDescription>Number of documents the teacher can generate</FormDescription>
+                        <FormDescription>Jumlah dokumen yang dapat dihasilkan guru</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -493,7 +492,7 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="accountStatus"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Account Status</FormLabel>
+                        <FormLabel>Status Akun</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger>
@@ -501,9 +500,9 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="active">Active</SelectItem>
-                            <SelectItem value="pending">Pending</SelectItem>
-                            <SelectItem value="inactive">Inactive</SelectItem>
+                            <SelectItem value="active">Aktif</SelectItem>
+                            <SelectItem value="pending">Tertunda</SelectItem>
+                            <SelectItem value="inactive">Tidak Aktif</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -516,10 +515,10 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
 
             <div className="flex justify-between mt-4">
               <Button type="button" variant="outline" onClick={() => setActiveTab("school")}>
-                Previous: School Information
+                Sebelumnya: Informasi Sekolah
               </Button>
               <Button type="button" onClick={() => setActiveTab("additional")}>
-                Next: Additional Information
+                Selanjutnya: Informasi Tambahan
               </Button>
             </div>
           </TabsContent>
@@ -528,8 +527,8 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
           <TabsContent value="additional">
             <Card>
               <CardHeader>
-                <CardTitle>Additional Information</CardTitle>
-                <CardDescription>Optional additional details about the teacher.</CardDescription>
+                <CardTitle>Informasi Tambahan</CardTitle>
+                <CardDescription>Detail tambahan tentang guru.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-1 gap-4">
@@ -538,9 +537,9 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="bio"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Biography (Optional)</FormLabel>
+                        <FormLabel>Biografi (Opsional)</FormLabel>
                         <FormControl>
-                          <Textarea placeholder="Brief biography of the teacher" className="resize-none" {...field} />
+                          <Textarea placeholder="Biografi singkat guru" className="resize-none" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -552,11 +551,11 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="certifications"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Certifications (Optional)</FormLabel>
+                        <FormLabel>Sertifikasi (Opsional)</FormLabel>
                         <FormControl>
-                          <Textarea placeholder="List of certifications" className="resize-none" {...field} />
+                          <Textarea placeholder="Daftar sertifikasi" className="resize-none" {...field} />
                         </FormControl>
-                        <FormDescription>Separate multiple certifications with commas</FormDescription>
+                        <FormDescription>Pisahkan sertifikasi dengan koma</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -567,11 +566,11 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                     name="specializations"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Specializations (Optional)</FormLabel>
+                        <FormLabel>Spesialisasi (Opsional)</FormLabel>
                         <FormControl>
-                          <Textarea placeholder="Areas of specialization" className="resize-none" {...field} />
+                          <Textarea placeholder="Bidang spesialisasi" className="resize-none" {...field} />
                         </FormControl>
-                        <FormDescription>Separate multiple specializations with commas</FormDescription>
+                        <FormDescription>Pisahkan spesialisasi dengan koma</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -586,10 +585,10 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
                           <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                         </FormControl>
                         <div className="space-y-1 leading-none">
-                          <FormLabel>Terms and Conditions</FormLabel>
+                          <FormLabel>Syarat dan Ketentuan</FormLabel>
                           <FormDescription>
-                            By checking this box, you confirm that all information provided is accurate and that you
-                            have permission to create this account.
+                            Dengan memeriksa kotak ini, Anda menyetujui bahwa semua informasi yang diberikan akurat dan
+                            Anda memiliki izin untuk membuat akun ini.
                           </FormDescription>
                         </div>
                         <FormMessage />
@@ -602,11 +601,11 @@ export function AddTeacherForm({ onSubmit, isSubmitting = false }: AddTeacherFor
 
             <div className="flex justify-between mt-4">
               <Button type="button" variant="outline" onClick={() => setActiveTab("account")}>
-                Previous: Account Settings
+                Sebelumnya: Pengaturan Akun
               </Button>
               <Button type="submit" disabled={isSubmitting}>
                 {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                Create Teacher Account
+                Buat Akun Guru
               </Button>
             </div>
           </TabsContent>

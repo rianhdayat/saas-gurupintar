@@ -289,60 +289,60 @@ export default function PaymentsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Payment Management</h1>
+      <h1 className="text-3xl font-bold mb-8">Manajemen Pembayaran</h1>
 
       {/* Payment Statistics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Total Paid (YTD)</CardTitle>
+            <CardTitle className="text-sm font-medium">Total Dibayar (YTD)</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{paymentStats.totalPaid}</div>
-            <p className="text-xs text-muted-foreground">{paymentStats.totalPayments} payments processed</p>
+            <p className="text-xs text-muted-foreground">{paymentStats.totalPayments} proses pembayaran</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Pending Payments</CardTitle>
+            <CardTitle className="text-sm font-medium">Pembayaran Tertunda</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{paymentStats.pendingAmount}</div>
-            <p className="text-xs text-muted-foreground">{paymentStats.pendingPayments} payments pending</p>
+            <p className="text-xs text-muted-foreground">{paymentStats.pendingPayments} pembayaran tertunda</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Monthly Budget</CardTitle>
+            <CardTitle className="text-sm font-medium">Biaya Bulanan</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{paymentStats.monthlyBudget}</div>
             <div className="mt-2">
               <Progress value={paymentStats.budgetUsed} className="h-2" />
-              <p className="text-xs text-muted-foreground mt-1">{paymentStats.budgetUsed}% of budget used</p>
+              <p className="text-xs text-muted-foreground mt-1">{paymentStats.budgetUsed}% penggunaan biaya</p>
             </div>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Next Payment Date</CardTitle>
+            <CardTitle className="text-sm font-medium">Tanggal Pembayaran Berikutnya</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">July 15, 2023</div>
-            <p className="text-xs text-muted-foreground">5 teachers scheduled</p>
+            <p className="text-xs text-muted-foreground">5 Guru dijadwalkan</p>
           </CardContent>
         </Card>
       </div>
 
       <Tabs defaultValue="teachers" className="space-y-6">
         <TabsList className="grid w-full grid-cols-4 max-w-2xl">
-          <TabsTrigger value="teachers">Teachers</TabsTrigger>
-          <TabsTrigger value="payments">Payment History</TabsTrigger>
-          <TabsTrigger value="scheduled">Scheduled</TabsTrigger>
-          <TabsTrigger value="reports">Reports</TabsTrigger>
+          <TabsTrigger value="teachers">Guru</TabsTrigger>
+          <TabsTrigger value="payments">Riwayat Pembayaran</TabsTrigger>
+          <TabsTrigger value="scheduled">Jadwal</TabsTrigger>
+          <TabsTrigger value="reports">Laporan</TabsTrigger>
         </TabsList>
 
         {/* Teachers Tab */}
@@ -350,8 +350,8 @@ export default function PaymentsPage() {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
-                <CardTitle>Teacher Payment Management</CardTitle>
-                <CardDescription>Manage and process payments for teachers</CardDescription>
+                <CardTitle>Manajemen Pembayaran Guru</CardTitle>
+                <CardDescription>Mengelola dan memproses pembayaran untuk guru</CardDescription>
               </div>
               <Dialog open={showBatchPaymentDialog} onOpenChange={setShowBatchPaymentDialog}>
                 <DialogTrigger asChild>
@@ -362,7 +362,7 @@ export default function PaymentsPage() {
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
-                    <DialogTitle>Process Batch Payment</DialogTitle>
+                    <DialogTitle></DialogTitle>
                     <DialogDescription>
                       You are about to process payments for {selectedTeachers.length} teachers.
                     </DialogDescription>
@@ -436,9 +436,9 @@ export default function PaymentsPage() {
                       <SelectValue placeholder="Filter by status" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">All Statuses</SelectItem>
-                      <SelectItem value="active">Active</SelectItem>
-                      <SelectItem value="inactive">Inactive</SelectItem>
+                      <SelectItem value="all">Semua Status</SelectItem>
+                      <SelectItem value="active">Aktif</SelectItem>
+                      <SelectItem value="inactive">Tidak Aktif</SelectItem>
                     </SelectContent>
                   </Select>
 
@@ -459,11 +459,11 @@ export default function PaymentsPage() {
                         aria-label="Select all teachers"
                       />
                     </TableHead>
-                    <TableHead>Name</TableHead>
-                    <TableHead>Salary</TableHead>
-                    <TableHead>Last Payment</TableHead>
+                    <TableHead>Nama</TableHead>
+                    <TableHead>Gaji</TableHead>
+                    <TableHead>Pembayaran Terakhir</TableHead>
                     <TableHead>Status</TableHead>
-                    <TableHead>Actions</TableHead>
+                    <TableHead>Aksi</TableHead>
                     <TableHead className="w-[50px]"></TableHead>
                   </TableRow>
                 </TableHeader>
@@ -572,8 +572,8 @@ export default function PaymentsPage() {
         <TabsContent value="payments">
           <Card>
             <CardHeader>
-              <CardTitle>Payment History</CardTitle>
-              <CardDescription>View all processed payments</CardDescription>
+              <CardTitle>Riwayat Pembayaran</CardTitle>
+              <CardDescription>Lihat semua pembayaran yang telah diproses</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="flex flex-col md:flex-row justify-between gap-4 mb-6">
@@ -595,10 +595,10 @@ export default function PaymentsPage() {
                       <SelectValue placeholder="Filter by status" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">All Statuses</SelectItem>
-                      <SelectItem value="paid">Paid</SelectItem>
-                      <SelectItem value="pending">Pending</SelectItem>
-                      <SelectItem value="failed">Failed</SelectItem>
+                      <SelectItem value="all">Semua Status</SelectItem>
+                      <SelectItem value="paid">Dibayar</SelectItem>
+                      <SelectItem value="pending">Tertunda</SelectItem>
+                      <SelectItem value="failed">Gagal</SelectItem>
                     </SelectContent>
                   </Select>
 
@@ -619,13 +619,13 @@ export default function PaymentsPage() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Reference</TableHead>
-                    <TableHead>Teacher</TableHead>
-                    <TableHead>Amount</TableHead>
-                    <TableHead>Date</TableHead>
-                    <TableHead>Description</TableHead>
+                    <TableHead>Referensi</TableHead>
+                    <TableHead>Guru</TableHead>
+                    <TableHead>Jumlah</TableHead>
+                    <TableHead>Tanggal</TableHead>
+                    <TableHead>Deskripsi</TableHead>
                     <TableHead>Status</TableHead>
-                    <TableHead>Actions</TableHead>
+                    <TableHead>Aksi</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -657,19 +657,19 @@ export default function PaymentsPage() {
         <TabsContent value="scheduled">
           <Card>
             <CardHeader>
-              <CardTitle>Scheduled Payments</CardTitle>
-              <CardDescription>View and manage upcoming scheduled payments</CardDescription>
+              <CardTitle>Pembayaran Terjadwal</CardTitle>
+              <CardDescription>MeLihat dan mengelola pembayaran yang akan datang</CardDescription>
             </CardHeader>
             <CardContent>
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Description</TableHead>
-                    <TableHead>Amount</TableHead>
-                    <TableHead>Scheduled Date</TableHead>
-                    <TableHead>Recipients</TableHead>
+                    <TableHead>Deskripsi</TableHead>
+                    <TableHead>Jumlah</TableHead>
+                    <TableHead>Tanggal Terjadwal</TableHead>
+                    <TableHead>Penerima</TableHead>
                     <TableHead>Status</TableHead>
-                    <TableHead>Actions</TableHead>
+                    <TableHead>Aksi</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -678,7 +678,7 @@ export default function PaymentsPage() {
                       <TableCell>{payment.description}</TableCell>
                       <TableCell>{payment.amount}</TableCell>
                       <TableCell>{new Date(payment.scheduledDate).toLocaleDateString()}</TableCell>
-                      <TableCell>{payment.recipients} teachers</TableCell>
+                      <TableCell>{payment.recipients} Guru</TableCell>
                       <TableCell>
                         <Badge variant="secondary" className="bg-amber-100 text-amber-800 hover:bg-amber-100">
                           <Clock className="h-3 w-3 mr-1" />
@@ -689,11 +689,11 @@ export default function PaymentsPage() {
                         <div className="flex space-x-2">
                           <Button variant="outline" size="sm">
                             <CheckCircle className="h-4 w-4 mr-2" />
-                            Process Now
+                            Proses Sekarang
                           </Button>
                           <Button variant="outline" size="sm">
                             <AlertCircle className="h-4 w-4 mr-2" />
-                            Cancel
+                            Batal
                           </Button>
                         </div>
                       </TableCell>
@@ -705,7 +705,7 @@ export default function PaymentsPage() {
             <CardFooter>
               <Button>
                 <Plus className="h-4 w-4 mr-2" />
-                Schedule New Payment
+                Jadwal Pembayaran Baru
               </Button>
             </CardFooter>
           </Card>
@@ -715,58 +715,58 @@ export default function PaymentsPage() {
         <TabsContent value="reports">
           <Card>
             <CardHeader>
-              <CardTitle>Payment Reports</CardTitle>
-              <CardDescription>Generate and download payment reports</CardDescription>
+              <CardTitle>Laporan Pembayaran</CardTitle>
+              <CardDescription>Membuat dan mengunduh laporan pembayaran</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">Monthly Payment Summary</CardTitle>
+                    <CardTitle className="text-lg">Ringkasan Pembayaran Bulanan</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Summary of all payments made in a specific month, including totals and breakdowns.
+                      Ringkasan semua pembayaran yang dibuat dalam bulan tertentu, termasuk total dan perincian.
                     </p>
                   </CardContent>
                   <CardFooter>
                     <Button variant="outline" className="w-full">
                       <Download className="h-4 w-4 mr-2" />
-                      Generate Report
+                      Buat Laporan
                     </Button>
                   </CardFooter>
                 </Card>
 
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">Teacher Payment History</CardTitle>
+                    <CardTitle className="text-lg">Riwayat Pembayaran Guru</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Detailed payment history for individual teachers, including all transactions and payment methods.
+                      Riwayat pembayaran detail untuk guru individu, termasuk semua transaksi dan metode pembayaran.
                     </p>
                   </CardContent>
                   <CardFooter>
                     <Button variant="outline" className="w-full">
                       <Download className="h-4 w-4 mr-2" />
-                      Generate Report
+                      Buat Laporan
                     </Button>
                   </CardFooter>
                 </Card>
 
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">Annual Tax Report</CardTitle>
+                    <CardTitle className="text-lg">Laporan Pajak Tahunan</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Comprehensive tax report for the fiscal year, suitable for accounting and tax filing purposes.
+                      Laporan pajak tahunan komprehensif, sesuai untuk tujuan akuntansi dan pelaporan pajak.
                     </p>
                   </CardContent>
                   <CardFooter>
                     <Button variant="outline" className="w-full">
                       <Download className="h-4 w-4 mr-2" />
-                      Generate Report
+                      Buat Laporan
                     </Button>
                   </CardFooter>
                 </Card>

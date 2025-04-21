@@ -45,13 +45,13 @@ export function SubscriptionManager({ userId }: SubscriptionManagerProps) {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Subscription Management</h2>
+      <h2 className="text-2xl font-bold mb-4">Pengelolaan Langganan</h2>
 
       {subscription ? (
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle>Current Subscription</CardTitle>
-            <CardDescription>Your active subscription details</CardDescription>
+            <CardTitle>Langganan Aktif</CardTitle>
+            <CardDescription>Detail langganan Anda</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -66,17 +66,17 @@ export function SubscriptionManager({ userId }: SubscriptionManagerProps) {
                 </Badge>
               </div>
               <div>
-                <h3 className="text-sm font-medium text-muted-foreground">Start Date</h3>
+                <h3 className="text-sm font-medium text-muted-foreground">Tanggal Mulai</h3>
                 <p className="text-lg font-semibold">{new Date(subscription.startDate).toLocaleDateString()}</p>
               </div>
               <div>
-                <h3 className="text-sm font-medium text-muted-foreground">End Date</h3>
+                <h3 className="text-sm font-medium text-muted-foreground">Tanggal Berakhir</h3>
                 <p className="text-lg font-semibold">{new Date(subscription.endDate).toLocaleDateString()}</p>
               </div>
             </div>
 
             <div className="mt-6">
-              <h3 className="text-sm font-medium text-muted-foreground mb-2">Features</h3>
+              <h3 className="text-sm font-medium text-muted-foreground mb-2">Fitur</h3>
               <ul className="space-y-2">
                 {subscription.features.map((feature, index) => (
                   <li key={index} className="flex items-center">
@@ -89,35 +89,37 @@ export function SubscriptionManager({ userId }: SubscriptionManagerProps) {
           </CardContent>
           <CardFooter>
             <Button variant="outline" className="mr-2">
-              Manage Subscription
+              Kelola Langganan
             </Button>
-            <Button variant="destructive">Cancel Subscription</Button>
+            <Button variant="destructive">Batalkan Langganan</Button>
           </CardFooter>
         </Card>
       ) : (
         <Card className="mb-8 border-dashed border-2 border-muted">
           <CardHeader>
-            <CardTitle>No Active Subscription</CardTitle>
-            <CardDescription>You don't have an active subscription</CardDescription>
+            <CardTitle>Tidak Ada Langganan Aktif</CardTitle>
+            <CardDescription>Anda tidak memiliki langganan aktif</CardDescription>
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground">
-              Subscribe to a plan to access premium features like advanced reports and analytics.
+              Langganan ke sebuah paket untuk mengakses fitur premium seperti laporan yang lebih komprehensif dan analisis.
             </p>
           </CardContent>
           <CardFooter>
-            <Button>Subscribe Now</Button>
+            <Button>Langganan Sekarang</Button>
           </CardFooter>
         </Card>
       )}
 
-      <h2 className="text-2xl font-bold mb-4">Available Plans</h2>
+      <h2 className="text-2xl font-bold mb-4">Paket Tersedia</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {plans.map((plan, index) => (
           <Card key={index} className={plan.recommended ? "border-primary" : ""}>
             {plan.recommended && (
-              <div className="bg-primary text-primary-foreground text-center py-1 text-sm font-medium">Recommended</div>
+              <div className="bg-primary text-primary-foreground text-center py-1 text-sm font-medium">
+                Rekomendasi
+              </div>
             )}
             <CardHeader>
               <CardTitle>{plan.name}</CardTitle>

@@ -10,24 +10,24 @@ export default function SettingsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Settings</h1>
+      <h1 className="text-3xl font-bold mb-8">Pengaturan</h1>
 
       <Tabs defaultValue="account">
         <TabsList className="mb-8">
-          <TabsTrigger value="account">Account</TabsTrigger>
-          <TabsTrigger value="subscription">Subscription</TabsTrigger>
-          <TabsTrigger value="notifications">Notifications</TabsTrigger>
-          <TabsTrigger value="security">Security</TabsTrigger>
+          <TabsTrigger value="account">Akun</TabsTrigger>
+          <TabsTrigger value="subscription">Langganan</TabsTrigger>
+          <TabsTrigger value="notifications">Notifikasi</TabsTrigger>
+          <TabsTrigger value="security">Keamanan</TabsTrigger>
         </TabsList>
 
         <TabsContent value="account">
           <Card>
             <CardHeader>
-              <CardTitle>Account Settings</CardTitle>
-              <CardDescription>Manage your account details and preferences</CardDescription>
+              <CardTitle>Pengaturan Akun</CardTitle>
+              <CardDescription>Mengatur detail dan preferensi akun Anda</CardDescription>
             </CardHeader>
             <CardContent>
-              <p>Account settings content will go here.</p>
+              <p>Isi pengaturan akun akan di sini.</p>
             </CardContent>
           </Card>
         </TabsContent>
@@ -39,11 +39,11 @@ export default function SettingsPage() {
         <TabsContent value="notifications">
           <Card>
             <CardHeader>
-              <CardTitle>Notification Settings</CardTitle>
-              <CardDescription>Manage your notification preferences</CardDescription>
+              <CardTitle>Pengaturan Notifikasi</CardTitle>
+              <CardDescription>Mengatur preferensi notifikasi Anda</CardDescription>
             </CardHeader>
             <CardContent>
-              <p>Notification settings content will go here.</p>
+              <p>Isi pengaturan notifikasi akan di sini.</p>
             </CardContent>
           </Card>
         </TabsContent>
@@ -51,11 +51,11 @@ export default function SettingsPage() {
         <TabsContent value="security">
           <Card>
             <CardHeader>
-              <CardTitle>Security Settings</CardTitle>
-              <CardDescription>Manage your security preferences</CardDescription>
+              <CardTitle>Pengaturan Keamanan</CardTitle>
+              <CardDescription>Mengatur preferensi keamanan Anda</CardDescription>
             </CardHeader>
             <CardContent>
-              <p>Security settings content will go here.</p>
+              <p>Isi pengaturan keamanan akan di sini.</p>
             </CardContent>
           </Card>
         </TabsContent>
